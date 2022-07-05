@@ -14,8 +14,8 @@ struct apiRequest {
         URLSession.shared.dataTask(with: urlPath) { data, response, error in
             do {
                 let jsonDecoder = JSONDecoder()
-                let responseModel = try jsonDecoder.decode([eventModel].self, from: data!)
-                completion(responseModel, error)
+                let events = try jsonDecoder.decode([eventModel].self, from: data!)
+                completion(events, error)
             } catch {
                 print("JSON Serialization error")
                 print(error)
