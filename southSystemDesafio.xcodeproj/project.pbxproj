@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6600EDE62876043100FFFA9E /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6600EDE52876043100FFFA9E /* EventsViewModel.swift */; };
+		6600EDE62876043100FFFA9E /* eventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6600EDE52876043100FFFA9E /* eventsViewModel.swift */; };
 		660146D42874B158002F237C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660146D32874B158002F237C /* AppDelegate.swift */; };
 		660146D62874B158002F237C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660146D52874B158002F237C /* SceneDelegate.swift */; };
 		660146D82874B158002F237C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660146D72874B158002F237C /* ViewController.swift */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6600EDE52876043100FFFA9E /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		6600EDE52876043100FFFA9E /* eventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsViewModel.swift; sourceTree = "<group>"; };
 		660146D02874B158002F237C /* southSystemDesafio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = southSystemDesafio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		660146D32874B158002F237C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		660146D52874B158002F237C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		660146E92874B5EF002F237C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6600EDE52876043100FFFA9E /* EventsViewModel.swift */,
+				6600EDE52876043100FFFA9E /* eventsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 				660146D82874B158002F237C /* ViewController.swift in Sources */,
 				660146D42874B158002F237C /* AppDelegate.swift in Sources */,
 				660146EB2874B645002F237C /* EventModel.swift in Sources */,
-				6600EDE62876043100FFFA9E /* EventsViewModel.swift in Sources */,
+				6600EDE62876043100FFFA9E /* eventsViewModel.swift in Sources */,
 				660146EE2874B6FF002F237C /* ApiRequest.swift in Sources */,
 				660146D62874B158002F237C /* SceneDelegate.swift in Sources */,
 			);
