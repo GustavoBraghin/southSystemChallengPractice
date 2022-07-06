@@ -13,7 +13,6 @@ class EventsViewModel {
     private var completion: (([EventModel]?, Error?) -> Void)?
     
     func loadData(completion: @escaping ([EventModel]?, Error?) -> Void) {
-        self.completion = completion
         apiRequest.fetchData { events, error in
             if let e = error {
                 completion(nil, e)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var events: [EventModel]? = []
     var eventsViewModel = EventsViewModel()
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func configureView() {
-        tableView.backgroundColor = .black
+        tableView.backgroundColor = .blue
         view.backgroundColor = .red
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -55,5 +55,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = "\(events?[indexPath.row].title ?? "error")"
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }
 
