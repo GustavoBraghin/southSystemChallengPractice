@@ -15,6 +15,7 @@
 		660146E02874B15A002F237C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660146DE2874B15A002F237C /* LaunchScreen.storyboard */; };
 		660146EB2874B645002F237C /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660146EA2874B645002F237C /* EventModel.swift */; };
 		660146EE2874B6FF002F237C /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660146ED2874B6FF002F237C /* ApiRequest.swift */; };
+		664580CF28774A2E0082BC8E /* SingleEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664580CE28774A2E0082BC8E /* SingleEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		660146E12874B15A002F237C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660146EA2874B645002F237C /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		660146ED2874B6FF002F237C /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		664580CE28774A2E0082BC8E /* SingleEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				660146D72874B158002F237C /* EventsViewController.swift */,
+				664580CE28774A2E0082BC8E /* SingleEventViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				660146D82874B158002F237C /* EventsViewController.swift in Sources */,
+				664580CF28774A2E0082BC8E /* SingleEventViewController.swift in Sources */,
 				660146D42874B158002F237C /* AppDelegate.swift in Sources */,
 				660146EB2874B645002F237C /* EventModel.swift in Sources */,
 				6600EDE62876043100FFFA9E /* eventsViewModel.swift in Sources */,

@@ -56,8 +56,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.present(SingleEventViewController(event: (events?[indexPath.row])!), animated: true)
+    }
 }
 
