@@ -57,7 +57,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.present(SingleEventViewController(event: (events?[indexPath.row])!), animated: true)
+        let vc = SingleEventViewController(event: (events?[indexPath.row])!)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
 }
 

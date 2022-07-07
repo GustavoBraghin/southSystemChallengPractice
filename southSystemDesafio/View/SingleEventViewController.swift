@@ -14,6 +14,7 @@ class SingleEventViewController: UIViewController {
     let eventPrice = UILabel()
     let eventDate = UILabel()
     let eventDescription = UITextView()
+    let but = UIButton()
     
     init(event: EventModel) {
         self.event = event
@@ -34,7 +35,7 @@ class SingleEventViewController: UIViewController {
     func setupLabel() {
         label.text = "Informações do evento:"
         label.textColor = .black
-//        label.backgroundColor = .blue
+        //        label.backgroundColor = .blue
         label.textAlignment = .left
         label.layer.cornerRadius = 20
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +52,7 @@ class SingleEventViewController: UIViewController {
     func setupTextInfo() {
         eventTitle.text = "\(event.title)"
         eventTitle.textColor = .black
-//        eventTitle.backgroundColor = .red
+        //        eventTitle.backgroundColor = .red
         eventTitle.textAlignment = .center
         eventTitle.layer.cornerRadius = 20
         eventTitle.font = UIFont(name: label.font.fontName, size: 22)
@@ -71,7 +72,7 @@ class SingleEventViewController: UIViewController {
     func setupEventPrice() {
         eventPrice.text = "Preço: R$: \(event.price)"
         eventPrice.textColor = .black
-//        eventPrice.backgroundColor = .blue
+        //        eventPrice.backgroundColor = .blue
         eventPrice.textAlignment = .center
         eventPrice.font = UIFont(name: label.font.fontName, size: 22)
         eventPrice.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +94,7 @@ class SingleEventViewController: UIViewController {
         print(localDate)
         eventDate.text = "Data: \(localDate)"
         eventDate.textColor = .black
-//        eventDate.backgroundColor = .blue
+        //        eventDate.backgroundColor = .blue
         eventDate.textAlignment = .center
         eventDate.font = UIFont(name: label.font.fontName, size: 22)
         eventDate.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +111,7 @@ class SingleEventViewController: UIViewController {
     
     func setupEventDescription() {
         eventDescription.text = "\(event.description)"
-//        eventDescription.backgroundColor = .red
+        //        eventDescription.backgroundColor = .red
         eventDescription.textAlignment = .center
         eventDescription.font = UIFont(name: label.font.fontName, size: 18)
         eventDescription.translatesAutoresizingMaskIntoConstraints = false
@@ -125,12 +126,28 @@ class SingleEventViewController: UIViewController {
         ])
     }
     
+    func setupButton() {
+        but.frame = CGRect(x: 10, y: 40, width: 50, height: 20)
+        but.backgroundColor = .yellow
+        but.setTitle("Return", for: .normal)
+        but.tintColor = .red
+        but.addTarget(self, action: #selector(buttonAction), for:.allTouchEvents)
+        
+        view.addSubview(but)
+    }
+    
     func configureView() {
         setupLabel()
         setupTextInfo()
         setupEventPrice()
         setupEventDate()
         setupEventDescription()
+        setupButton()
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        print("Button Clicked")
+        self.dismiss(animated: true)
     }
     
     /*
