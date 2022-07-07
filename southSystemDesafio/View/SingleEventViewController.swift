@@ -9,6 +9,11 @@ import UIKit
 
 class SingleEventViewController: UIViewController {
     let event: EventModel
+    let label = UILabel()
+    let eventTitle = UILabel()
+    let eventPrice = UILabel()
+    let eventDate = UILabel()
+    let eventDescription = UITextView()
     
     init(event: EventModel) {
         self.event = event
@@ -21,16 +26,111 @@ class SingleEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         // Do any additional setup after loading the view.
-        setupView()
+        configureView()
     }
     
-    func setupView() {
-        let label = UILabel(frame: CGRect(x: 50, y: 50, width: 100, height: 100))
-        label.text = "\(event.title)"
-        self.view.addSubview(label)
-        view.backgroundColor = .red
+    func setupLabel() {
+        label.text = "Informações do evento:"
+        label.textColor = .black
+//        label.backgroundColor = .blue
+        label.textAlignment = .left
+        label.layer.cornerRadius = 20
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(label)
+        
+        
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+        ])
+    }
+    
+    func setupTextInfo() {
+        eventTitle.text = "\(event.title)"
+        eventTitle.textColor = .black
+//        eventTitle.backgroundColor = .red
+        eventTitle.textAlignment = .center
+        eventTitle.layer.cornerRadius = 20
+        eventTitle.font = UIFont(name: label.font.fontName, size: 22)
+        eventTitle.translatesAutoresizingMaskIntoConstraints = false
+        eventTitle.numberOfLines = 2
+        
+        view.addSubview(eventTitle)
+        
+        NSLayoutConstraint.activate([
+            eventTitle.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            eventTitle.topAnchor.constraint(equalTo: label.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            eventTitle.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -70),
+            eventTitle.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 70)
+        ])
+    }
+    
+    func setupEventPrice() {
+        eventPrice.text = "Preço: R$: \(event.price)"
+        eventPrice.textColor = .black
+//        eventPrice.backgroundColor = .blue
+        eventPrice.textAlignment = .center
+        eventPrice.font = UIFont(name: label.font.fontName, size: 22)
+        eventPrice.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(eventPrice)
+        
+        NSLayoutConstraint.activate([
+            eventPrice.topAnchor.constraint(equalTo: eventTitle.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            eventPrice.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            eventPrice.trailingAnchor.constraint(equalTo: eventTitle.safeAreaLayoutGuide.centerXAnchor, constant: -5)
+        ])
+    }
+    
+    func setupEventDate() {
+        let date = Date(timeIntervalSince1970: event.date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short //Set date style
+        let localDate = dateFormatter.string(from: date as Date)
+        print(localDate)
+        eventDate.text = "Data: \(localDate)"
+        eventDate.textColor = .black
+//        eventDate.backgroundColor = .blue
+        eventDate.textAlignment = .center
+        eventDate.font = UIFont(name: label.font.fontName, size: 22)
+        eventDate.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(eventDate)
+        
+        NSLayoutConstraint.activate([
+            eventDate.topAnchor.constraint(equalTo: eventTitle.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            eventDate.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            eventDate.leadingAnchor.constraint(equalTo: eventTitle.safeAreaLayoutGuide.centerXAnchor, constant: 5)
+        ])
+    }
+    
+    
+    func setupEventDescription() {
+        eventDescription.text = "\(event.description)"
+//        eventDescription.backgroundColor = .red
+        eventDescription.textAlignment = .center
+        eventDescription.font = UIFont(name: label.font.fontName, size: 18)
+        eventDescription.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(eventDescription)
+        
+        NSLayoutConstraint.activate([
+            eventDescription.topAnchor.constraint(equalTo: eventPrice.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            eventDescription.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            eventDescription.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            eventDescription.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0)
+        ])
+    }
+    
+    func configureView() {
+        setupLabel()
+        setupTextInfo()
+        setupEventPrice()
+        setupEventDate()
+        setupEventDescription()
     }
     
     /*
