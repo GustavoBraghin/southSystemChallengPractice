@@ -32,6 +32,19 @@ class SingleEventViewController: UIViewController {
         configureView()
     }
     
+    func setupButton() {
+        but.setTitle("Return", for: .normal)
+        but.setTitleColor(.blue, for: .normal)
+        but.addTarget(self, action: #selector(buttonAction), for:.allTouchEvents)
+        but.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(but)
+        
+        NSLayoutConstraint.activate([
+            but.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            but.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+        ])
+    }
+    
     func setupLabel() {
         label.text = "Informações do evento:"
         label.textColor = .black
@@ -45,7 +58,7 @@ class SingleEventViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+            label.topAnchor.constraint(equalTo: but.safeAreaLayoutGuide.bottomAnchor, constant: 20)
         ])
     }
     
@@ -126,23 +139,13 @@ class SingleEventViewController: UIViewController {
         ])
     }
     
-    func setupButton() {
-        but.frame = CGRect(x: 10, y: 40, width: 50, height: 20)
-        but.backgroundColor = .yellow
-        but.setTitle("Return", for: .normal)
-        but.tintColor = .red
-        but.addTarget(self, action: #selector(buttonAction), for:.allTouchEvents)
-        
-        view.addSubview(but)
-    }
-    
     func configureView() {
+        setupButton()
         setupLabel()
         setupTextInfo()
         setupEventPrice()
         setupEventDate()
         setupEventDescription()
-        setupButton()
     }
     
     @objc func buttonAction(sender: UIButton!) {
