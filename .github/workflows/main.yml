@@ -18,7 +18,7 @@ jobs:
         env: 
          destination: ${{ matrix.destination }}
       - name: Test
-      working-directory: southSystemDesafio;
+        working-directory: southSystemDesafio;
         run: |
           xcodebuild clean test -project GHFollowers.xcodeproj -scheme GHFollowersTests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
